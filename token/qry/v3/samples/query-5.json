@@ -1,0 +1,32 @@
+{
+   "selector": {
+      "docType": "CryptocoinTransactions",
+      "$and": [
+         {
+            "txnDate": {
+               "$gte": "2019-01-01T00:00:00Z"
+            }
+         },
+         {
+            "txnDate": {
+               "$lte": "2019-02-15T00:00:00Z"
+            }
+         }
+      ],
+      "txnVolume": {
+         "$gte": 0
+      }
+   },
+   "fields": [
+      "txnVolume",
+      "txnDate"
+   ],
+   "sort": [
+      {
+         "txnVolume": "desc"
+      },
+      {
+         "txnDate": "desc"
+      }
+   ]
+}

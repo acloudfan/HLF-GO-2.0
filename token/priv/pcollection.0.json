@@ -1,0 +1,16 @@
+[
+  {
+    "name": "AcmeBudgetOpen",
+    "policy": "OR('AcmeMSP.member', 'BudgetMSP.member')",
+    "requiredPeerCount": 0,
+    "maxPeerCount": 3,
+    "blockToLive": 0
+  },
+  {
+    "name": "AcmePrivate",
+    "policy": "OR('AcmeMSP.member')",
+    "requiredPeerCount": 0,
+    "maxPeerCount": 3,
+    "blockToLive": 0
+  }
+]

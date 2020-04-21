@@ -1,0 +1,12 @@
+{
+   "selector": {
+        "txnDate": "2018-01-02T00:00:00Z",
+
+         "$not": {
+            "paymentCount": {
+               "$gt": 1800000
+            }
+         }
+      
+   }
+}

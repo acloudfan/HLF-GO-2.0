@@ -1,0 +1,13 @@
+{
+   "selector": {
+      "docType": "CryptocoinTransactions",
+      "usdPrice": {
+        "$gte": 5000}
+   },
+   "fields": [
+      "txnDate",
+      "usdPrice"
+   ]
+ }
+
+ 

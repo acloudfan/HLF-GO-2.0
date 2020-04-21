@@ -1,0 +1,116 @@
+[
+    {
+        "selector": {
+            "_id": "2009-01-04"
+        }
+    },
+    {
+        "selector": {
+            "txnDate": "2018-01-01T00:00:00Z"
+        }
+    },
+    {
+        "selector": {
+            "txnDate": {
+                "$eq": "2018-01-01T00:00:00Z"
+            }
+        }
+    },
+    {
+        "selector": {
+            "txnDate": "2018-01-01T00:00:00Z"
+        },
+        "fields": [
+            "price",
+            "activeAddresses"
+        ]
+    },
+    {
+        "selector": {
+            "txnDate": {
+                "$gt": "2019-01-01",
+                "$lt": "2019-01-02"
+            }
+        }
+    },
+    {
+        "selector": {
+            "transaction": {
+                "$exists": true
+            }
+        }
+    },
+    {
+        "selector": {
+            "txnDate": {
+                "$type": "string"
+            }
+        }
+    },
+    {
+        "selector": {
+            "txnDate": {
+                "$type": "number"
+            }
+        }
+    },
+    {
+        "selector": {
+            "txnDate": {
+                "$in": [
+                    "2019-01-02T00:00:00Z",
+                    "2018-01-02T00:00:00Z"
+                ]
+            }
+        }
+    },
+    {
+        "selector": {
+            "txnDate": {
+                "$gt": "2018-01-01T00:00:00Z",
+                "$lt": "2019-01-01T00:00:00Z"
+            },
+            "paymentCount": {
+                "$gt": 800000
+            }
+        }
+    },
+    {
+        "selector": {
+            "$and": [
+                {
+                    "txnDate": {
+                        "$gt": "2018-01-01",
+                        "$lt": "2019-01-01"
+                    }
+                },
+                {
+                    "paymentCount": {
+                        "$gt": 800000
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "selector": {
+            "$or": [
+                {"txnDate":"2018-01-01T00:00:00Z"}
+            ]
+        }
+    },
+    {
+        "selector": {
+           "$or": [
+              {
+                 "txnDate": "2018-01-02T00:00:00Z"
+              },
+              {
+                 "paymentCount": {
+                    "$gt": 1800000
+                 }
+              }
+           ]
+        }
+     }
+]

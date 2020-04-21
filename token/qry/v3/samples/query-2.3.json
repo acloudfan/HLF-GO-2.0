@@ -1,0 +1,13 @@
+{
+    "selector": {
+       "docType": "CryptocoinTransactions",
+       "txnDate": {
+          "$gt": "2019-02-15T00:00:00Z"
+       }
+    },
+    "skip": 2,
+    "limit": 1,
+    "fields": [
+       "txnDate","usdPrice"
+    ]
+ }

@@ -1,0 +1,93 @@
+/**
+ * Allows the managing of multiple tokens
+ *
+ * Token1    x       0
+ * Token1    x       10
+ * Token2    y       5
+ *
+ **/
+ package main
+
+ import (
+	"fmt"
+
+	// The shim package
+	"github.com/hyperledger/fabric/core/chaincode/shim"
+	// peer.Response is in the peer package
+	"github.com/hyperledger/fabric/protos/peer"
+
+)
+
+// TokenChaincode Represents our chaincode object
+type TokenChaincode struct {
+}
+
+// Init Implements the Init method
+func (token *TokenChaincode) Init(stub shim.ChaincodeStubInterface) peer.Response {
+	// V7
+	// Nothing done in init
+	fmt.Println("init()")
+
+	return shim.Success([]byte("true"))
+}
+
+// Invoke method
+func (token *TokenChaincode) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
+	funcName, _ := stub.GetFunctionAndParameters()
+	fmt.Println("Function=", funcName)
+
+	if funcName == "add" {
+		return AddToken(stub)
+	} else if funcName == "delete" {
+		return DeleteToken(stub)
+	} else if funcName == "get" {
+		return GetToken(stub)
+	}
+
+	// This is not good
+	return shim.Error(("Bad Function Name = "+funcName+"!!!"))
+}
+
+// AddToken adds a token to the state
+// Otherwise returns -1
+// Takes 2 argumets = tokenName & a positive number
+// Sets an event AddTokenEvent
+func	AddToken(stub shim.ChaincodeStubInterface) peer.Response {
+	
+	return shim.Success([]byte("true"))
+}
+
+// GetToken returns the value of the token
+// Otherwise returns -1
+// Takes an argumet = tokenName
+func	GetToken(stub shim.ChaincodeStubInterface) peer.Response {
+	tokenValue := "-1"
+	return shim.Success([]byte(tokenValue))
+}
+// DeleteToken deletes the token
+// Returns true | false
+// Takes an argumet = tokenName
+func	DeleteToken(stub shim.ChaincodeStubInterface) peer.Response {
+	
+	// Check if token exists - if it doesnt then return false
+	return shim.Success([]byte("true"))
+}
+
+// AddNumber adds the passed unsigned number to the token
+// Takes 2 argumets = tokenName & a positive number
+// Returns   true | false
+func    AddNumber(stub shim.ChaincodeStubInterface) peer.Response {
+	
+	// Check if token exists - if it doesnt return false
+
+	return shim.Success([]byte("true"))
+}
+
+// Chaincode registers with the Shim on startup
+func main() {
+	fmt.Printf("Started Chaincode.\n")
+	err := shim.Start(new(TokenChaincode))
+	if err != nil {
+		fmt.Printf("Error starting chaincode: %s", err)
+	}
+}

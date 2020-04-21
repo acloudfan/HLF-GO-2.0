@@ -1,0 +1,12 @@
+{
+    "index": {
+        "fields": [
+            "docType",
+            "txnVolume",
+            "txnDate"
+        ]
+    },
+    "ddoc": "indexOnTxnDateVolume",
+    "name": "indexOnTxnDateVolume",
+    "type": "json"
+}
