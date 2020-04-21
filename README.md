@@ -14,4 +14,3 @@ Checkout the course preview:
 https://courses.pragmaticpaths.com/
 
 
-
